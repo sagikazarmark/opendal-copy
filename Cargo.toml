@@ -1,0 +1,30 @@
+[package]
+name = "opendal-copy"
+version = "0.0.0"
+description = "Copy files from one OpenDAL service to another"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/sagikazarmark/opendal-copy"
+homepage = "https://github.com/sagikazarmark/opendal-copy"
+
+[dependencies]
+content_disposition = "0.4"
+futures = "0.3"
+globset = "0.4"
+opendal = "0.57"
+typed-path = "0.12"
+
+[dev-dependencies]
+opendal = { version = "0.57", features = ["services-memory"] }
+tokio = { version = "1", features = ["full"] }
+
+[target.'cfg(all(target_os = "macos", target_arch = "aarch64"))'.dependencies]
+# ctor 1.0.8+ produces misaligned Mach-O sections on arm64 macOS.
+ctor = "=1.0.7"
+
+[package.metadata.release]
+sign-commit = true
+sign-tag = true
+shared-version = true
+tag-message = "Release {{version}}"
+tag-name = "v{{version}}"

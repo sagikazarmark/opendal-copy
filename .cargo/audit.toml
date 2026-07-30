@@ -1,0 +1,8 @@
+[advisories]
+ignore = [
+    # opendal-core 0.57 requires quick-xml ^0.39.3, but does not invoke the
+    # vulnerable XML attribute or namespace parsing paths used by these DoS
+    # advisories. Remove both exceptions when upgrading OpenDAL to 0.58+.
+    "RUSTSEC-2026-0194",
+    "RUSTSEC-2026-0195",
+]
