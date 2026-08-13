@@ -11,14 +11,14 @@ homepage = "https://github.com/sagikazarmark/opendal-copy"
 content_disposition = "0.4"
 futures = "0.3"
 globset = "0.4"
-opendal = "0.57"
+opendal = "0.58"
 typed-path = "0.12"
 
 # ctor 1.0.8+, <1.0.11 produces misaligned Mach-O sections on arm64 macOS.
 ctor = "1.0.11"
 
 [dev-dependencies]
-opendal = { version = "0.57", features = ["services-memory"] }
+opendal = { version = "0.58", features = ["services-memory"] }
 tokio = { version = "1", features = ["full"] }
 
 [package.metadata.release]
